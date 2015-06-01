@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: 2015-05-28 19:06:08
+  User_id: 
+  Pup: 
+
+two:
+  time: 2015-05-28 19:06:08
+  User_id: 
+  Pup: 
