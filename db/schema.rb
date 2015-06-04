@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150529020608) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "appointments", force: true do |t|
     t.datetime "time"
     t.integer  "user_id"
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150529020608) do
     t.datetime "updated_at"
   end
 
-  add_index "appointments", ["user_id"], name: "index_appointments_on_user_id"
+  add_index "appointments", ["user_id"], name: "index_appointments_on_user_id", using: :btree
 
   create_table "pups", force: true do |t|
     t.string   "puppy_name"

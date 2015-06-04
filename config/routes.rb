@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+# config/routes.rb
+root "users#index"
+
+get '/login'     => 'sessions#new'
+post '/login'    => 'sessions#create'
+delete '/logout' => 'sessions#destroy'
   # get 'user/index'
 
   # get 'user/new'
@@ -79,4 +86,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end
