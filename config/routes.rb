@@ -3,9 +3,37 @@ Rails.application.routes.draw do
 # config/routes.rb
 root "users#index"
 
-get '/login'     => 'sessions#new'
+get '/login'     => 'sessions#new', 
 post '/login'    => 'sessions#create'
 delete '/logout' => 'sessions#destroy'
+
+
+get '/users' => 'users#index', as: :users
+post'/users' => 'users#create'
+get '/users' => 'users#new', as: :new_user
+get '/users/:id/edit' => 'users/edit' as: :edit_user
+get '/users/:id' => 'users#show', as: :user
+patch 'users/:id' => 'users#update'
+put '/users/:id' => 'users#update'
+delete'/users/:id' => 'users#destroy'
+get '/pups' => 'pups#index', as: :pups
+post '/pups' => 'pups#create'
+get '/pups/new' => 'pups#new'as: :new_pup
+get '/pups/:id/edit' => 'pups#edit' as: :edit_pup
+get '/pups/:id' => 'pups#show' as: :pup
+patch '/pups/:id' => 'pups#update'
+put 'pups/:id' => 'pups#update'
+delete '/pups/:id' => 'pups#destroy'
+
+
+
+
+           
+
+  resources :users
+  resources :pups
+
+
   # get 'user/index'
 
   # get 'user/new'
@@ -29,8 +57,7 @@ delete '/logout' => 'sessions#destroy'
   # get 'puppy/update'
 
   # get 'puppy/show'
-  resources :users
-  resources :pups
+ 
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
