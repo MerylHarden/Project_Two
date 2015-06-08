@@ -4,6 +4,21 @@
 
 <h2>Please feel free to create a post about your favorite puppy below</h2>
 
+<% @posts.each do |post| %>
+  <%= post.title %>
+  <%= link_to 'show', post_path(post)%><br>
+<% end %>
+
+<ul>
+  <% @users.each do |user| %>
+    <li><%= user.name %></li>
+  <% end %>
+</ul>
+
+<br>
+<%= link_to "make a new post", new_post_path %><br>
+
+
 <div class="container-fluid">
 
   <div class="row" id="welcome">

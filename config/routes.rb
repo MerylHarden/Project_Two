@@ -1,10 +1,29 @@
+#Rails.application.routes.draw do
+
+#root "users#index"
+
+#resources :users do
+#resources :pups
+
+
 Rails.application.routes.draw do
+  
+  root 'posts#index'
 
-root "users#index"
+  resources :posts do
+  resources :comments, only: [:create, :edit, :destroy]
+  #resources :users do
+  #resources :pups
+  end
 
-resources :users do
-resources :pups
-end
+  get "users" => "users#index"
+  get "users/new" => "users#new" 
+  post "users" => "users#create"
+
+  get '/login'     => 'sessions#new'
+  post '/login'    => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
+
 
 #get '/login'     => 'sessions#new'
 #post '/login'    => 'sessions#create'

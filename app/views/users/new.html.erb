@@ -1,5 +1,37 @@
-<h1>New Comment</h1>
+<h1>Let's create a new post!</h1>
 
-<%= render 'form' %>
+<%= form_for @post do |f| %>
+	<div class="form-group">
+		<%= f.label :title %>
+		<%= f.text_field :title, class:"form-control"%>
+	</div>
+	<div class="form-group">
+		<%= f.label :body %>
+		<%= f.text_area :body, class:"form-control"%>
+	</div><br>
+	<%= f.submit %>
+<% end %>
 
-<%= link_to 'Back', comments_path %>
+<h1>Sign Up</h1>
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
