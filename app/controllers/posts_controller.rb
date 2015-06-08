@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :authorized?, except: :index
 
+ 
+
   def index
   	@posts = Post.all
   end
