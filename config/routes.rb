@@ -2,22 +2,26 @@ Rails.application.routes.draw do
 
 root "users#index"
 
-get '/login'     => 'sessions#new'
-post '/login'    => 'sessions#create'
-delete '/logout' => 'sessions#destroy'
+resources :users do
+resources :pups
+end
+
+#get '/login'     => 'sessions#new'
+#post '/login'    => 'sessions#create'
+#delete '/logout' => 'sessions#destroy'
 
 
-get "users" => 'users#index', as: :users
+#get "users" => 'users#index', as: :users
 
-post"/users" => 'users#create'
+#post"/users" => 'users#create'
 
-get "users/new" => 'users#new', as: :new_user
+#get "users/new" => 'users#new', as: :new_user
 
-get "/users/:id" => 'users#show', as: :user
+#get "/users/:id" => 'users#show', as: :user
 
-patch 'users/:id' => 'users#update'
+#patch 'users/:id' => 'users#update'
 
-delete'/users/:id' => 'users#destroy'
+#delete'/users/:id' => 'users#destroy'
 
 # get "users/:id/edit" => 'users/edit', as: :edit_user
 
@@ -39,8 +43,7 @@ delete'/users/:id' => 'users#destroy'
 
            
 
-  # resources :users
-  # resources :pups
+  
 
 
   # get 'user/index'

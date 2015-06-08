@@ -1,2 +1,19 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Commenter:</strong>
+  <%= @user.commenter %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @user.body %>
+</p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @user.post %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
