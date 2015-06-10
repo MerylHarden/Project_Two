@@ -10,20 +10,21 @@ Rails.application.routes.draw do
   
   root 'posts#index'
 
-  resources :posts do
-  resources :comments, only: [:create, :edit, :destroy]
+  #resources :posts do
+  #resources :comments, only: [:create, :edit, :destroy]
   #resources :users do
   #resources :pups
-  end
+  #end
 
-  get "users" => "users#index"
-  get "users/new" => "users#new" 
-  post "users" => "users#create"
+  get "posts" => "posts#index"
+  get "posts/new" => "posts#new" 
+  post "posts" => "users#create"
 
   get '/login'     => 'sessions#new'
   post '/login'    => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
+end
 
 #get '/login'     => 'sessions#new'
 #post '/login'    => 'sessions#create'
@@ -145,4 +146,3 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-end
